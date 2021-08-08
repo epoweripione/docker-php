@@ -1,11 +1,11 @@
-name: PHP-FPM 7 CI
+name: PHP-FPM-7 CI
 
 # For all pushes to the main branch run the tests and push the image to the
 # GitHub registry under an edge tag so we can use it for the nightly
 # integration tests
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   docker:

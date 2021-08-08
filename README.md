@@ -1,11 +1,10 @@
-# docker-php-alpine
-Latest PHP docker build script(base on php:fpm)
+# docker-php
+**Build latest PHP docker images with extensions**
 
-
-Use `docker-php-ext-install extension_name` to install Extensions.
-
-Default installed extensions: see the Dockerfile for more detail.
-
-`Composer` also installed.
+* Use `install-php-extensions extension_name` to install Extensions.
+> [docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
+* Default **installed** extensions: see the `Dockerfile` for more detail.
+* `Composer`
+* `PDFlib`
 
 More info: https://hub.docker.com/_/php/

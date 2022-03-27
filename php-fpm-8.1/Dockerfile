@@ -49,7 +49,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         pspell \
         redis \
         smbclient \
-        snmp \
         soap \
         sockets \
         ssh2 \

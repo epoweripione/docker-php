@@ -3,7 +3,7 @@ FROM php:8.1-fpm
 LABEL Maintainer="Ansley Leung" \
       Description="latest PHP8 fpm Docker image. Use `docker-php-ext-install extension_name` to install Extensions." \
       License="MIT License" \
-      Version="8.1.8"
+      Version="8.1.9"
 
 # Environments
 ENV TZ=Asia/Shanghai
@@ -75,7 +75,16 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
 RUN set -ex && \
     ## PDFlib
     ## https://www.pdflib.com/download/pdflib-product-family/
-    curl -fSL -o pdflib.tar.gz https://www.pdflib.com/binaries/PDFlib/1000/PDFlib-10.0.0p1-Linux-x64-php.tar.gz && \
+    OS_ARCH=$(uname -m) && \
+	case "$OS_ARCH" in \
+		amd64 | x86_64) \
+			OS_ARCH='x64' \
+			;; \
+		i?86 | x86) \
+			OS_ARCH='x86' \
+			;; \
+	esac && \
+    curl -fSL -o pdflib.tar.gz https://www.pdflib.com/binaries/PDFlib/1000/PDFlib-10.0.0p1-Linux-${OS_ARCH}-php.tar.gz && \
     tar -xzf pdflib.tar.gz && \
     mv PDFlib-* pdflib && \
     PHP_EXT_DIR=$(php-config --extension-dir) && \

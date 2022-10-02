@@ -76,7 +76,16 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
 RUN set -ex && \
     ## PDFlib
     ## https://www.pdflib.com/download/pdflib-product-family/
-    curl -fSL -o pdflib.tar.gz https://www.pdflib.com/binaries/PDFlib/1000/PDFlib-10.0.0p1-Linux-x64-php.tar.gz && \
+    OS_ARCH=$(uname -m) && \
+	case "$OS_ARCH" in \
+		amd64 | x86_64) \
+			OS_ARCH='x64' \
+			;; \
+		i?86 | x86) \
+			OS_ARCH='x86' \
+			;; \
+	esac && \
+    curl -fSL -o pdflib.tar.gz https://www.pdflib.com/binaries/PDFlib/1001/PDFlib-10.0.1-Linux-${OS_ARCH}-php.tar.gz && \
     tar -xzf pdflib.tar.gz && \
     mv PDFlib-* pdflib && \
     PHP_EXT_DIR=$(php-config --extension-dir) && \

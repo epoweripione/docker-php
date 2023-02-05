@@ -64,7 +64,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         xlswriter \
         xsl \
         yaml \
-        yar \
         zip \
         zstd \
     && \

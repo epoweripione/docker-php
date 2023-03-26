@@ -85,7 +85,7 @@ RUN set -ex && \
 			OS_ARCH='x86' \
 			;; \
 	esac && \
-    curl -fSL -o pdflib.tar.gz https://www.pdflib.com/binaries/PDFlib/1001/PDFlib-10.0.1-Linux-${OS_ARCH}-php.tar.gz && \
+    curl -fSL -k -o pdflib.tar.gz https://www.pdflib.com/binaries/PDFlib/1001/PDFlib-10.0.1-Linux-${OS_ARCH}-php.tar.gz && \
     tar -xzf pdflib.tar.gz && \
     mv PDFlib-* pdflib && \
     PHP_EXT_DIR=$(php-config --extension-dir) && \

@@ -27,7 +27,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         gettext \
         gmp \
         gnupg \
-        grpc \
         igbinary \
         imagick \
         imap \

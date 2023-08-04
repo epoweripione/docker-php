@@ -8,3 +8,10 @@
 * `PDFlib`
 
 More info: https://hub.docker.com/_/php/
+
+# grpc
+Recently, I removed `grpc`, because it takes an extremely long time to build, exceeding the limit for `Github Actions`.
+
+If you really want to use it, build it locally.
+
+Maybe add back in the future if we can find a way to reduce the build time.

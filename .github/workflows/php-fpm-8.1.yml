@@ -5,7 +5,8 @@ name: PHP-FPM-8.1 CI
 # integration tests
 on:
   push:
-    branches: ['main']
+    # branches: ['main']
+    tags: ['fpm-8.1.*']
 
 jobs:
   docker:
@@ -24,12 +25,13 @@ jobs:
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
+            VERSION=${VERSION#refs/tags/}
           fi
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
           fi
           TAGS="${GHCR_IMAGE}:${VERSION}"
-          TAGS="$TAGS,${GHCR_IMAGE}:latest,${ACR_IMAGE}:latest"
+          TAGS="$TAGS,${GHCR_IMAGE}:latest,${ACR_IMAGE}:${VERSION},${ACR_IMAGE}:latest"
           echo ::set-output name=tags::${TAGS}
 
       - name: Setup QEMU

@@ -3,7 +3,7 @@ FROM php:8.3-fpm
 LABEL Maintainer="Ansley Leung" \
       Description="latest PHP8 fpm Docker image. Use `docker-php-ext-install extension_name` to install Extensions." \
       License="MIT License" \
-      Version="8.3.13"
+      Version="8.3.14"
 
 # Environments
 ENV TZ=Asia/Shanghai
@@ -28,7 +28,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         gmp \
         gnupg \
         igbinary \
-        imagick/imagick@master \
+        imagick \
         imap \
         intl \
         json_post \

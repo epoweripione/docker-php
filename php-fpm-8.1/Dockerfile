@@ -42,8 +42,10 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         oauth \
         opcache \
         pcntl \
+        pdo_dblib \
         pdo_mysql \
         pdo_pgsql \
+        pdo_sqlite \
         pgsql \
         pspell \
         redis \

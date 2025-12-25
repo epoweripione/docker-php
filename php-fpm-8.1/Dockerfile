@@ -71,7 +71,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     rm -rf /tmp/* /var/cache/apk/*
 
 # swoole
-RUN apt install -y sqlite3 libsqlite3-dev libpq-dev --no-install-recommends && \
+RUN apt-get update && \
+    apt install -y sqlite3 libsqlite3-dev libpq-dev --no-install-recommends && \
     install-php-extensions swoole && \
     rm -rf /tmp/* /var/cache/apk/*
 

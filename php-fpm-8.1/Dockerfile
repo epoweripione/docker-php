@@ -42,10 +42,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         oauth \
         opcache \
         pcntl \
-        pdo_dblib \
         pdo_mysql \
         pdo_pgsql \
-        pdo_sqlite \
         pgsql \
         pspell \
         redis \
@@ -53,7 +51,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         soap \
         sockets \
         ssh2 \
-        swoole \
         sysvmsg \
         sysvsem \
         sysvshm \
@@ -73,9 +70,13 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     : && \
     rm -rf /tmp/* /var/cache/apk/*
 
+# swoole
+RUN apt install -y sqlite3 libsqlite3-dev libpq-dev --no-install-recommends && \
+    install-php-extensions swoole && \
+    rm -rf /tmp/* /var/cache/apk/*
+
 RUN set -ex && \
-    ## PDFlib
-    ## https://www.pdflib.com/download/pdflib-product-family/
+    # [PDFlib](https://www.pdflib.com/download/pdflib-product-family/)
     OS_ARCH=$(uname -m) && \
 	case "$OS_ARCH" in \
 		amd64 | x86_64) \

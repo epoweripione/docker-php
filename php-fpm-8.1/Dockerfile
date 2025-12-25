@@ -3,7 +3,7 @@ FROM php:8.1-fpm
 LABEL Maintainer="Ansley Leung" \
       Description="latest PHP8 fpm Docker image. Use `docker-php-ext-install extension_name` to install Extensions." \
       License="MIT License" \
-      Version="8.1.33"
+      Version="8.1.34"
 
 # Environments
 ENV TZ=Asia/Shanghai

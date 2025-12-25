@@ -70,11 +70,11 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     : && \
     rm -rf /tmp/* /var/cache/apk/*
 
-# swoole
-RUN apt-get update && \
-    apt install -y sqlite3 libsqlite3-dev libpq-dev --no-install-recommends && \
-    install-php-extensions swoole && \
-    rm -rf /tmp/* /var/cache/apk/*
+## [swoole](https://github.com/swoole/library/blob/master/Dockerfile)
+# RUN apt-get update && \
+#     apt-get install -y sqlite3 libsqlite3-dev libpq-dev --no-install-recommends && \
+#     install-php-extensions swoole && \
+#     rm -rf /tmp/* /var/cache/apk/*
 
 RUN set -ex && \
     # [PDFlib](https://www.pdflib.com/download/pdflib-product-family/)

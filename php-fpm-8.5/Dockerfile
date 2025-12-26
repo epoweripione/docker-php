@@ -96,7 +96,7 @@ RUN set -ex && \
     rm pdflib.tar.gz && \
     rm -r pdflib && \
     : && \
-    PHP_INI_DIR=$(php --ini | grep "Scan for additional .ini files in" | cut -d':' -f2 | cut -d' ' -f2 | head -n1) && \
+    PHP_INI_DIR=$(php --ini | grep "Scan for additional .ini files in" | cut -d':' -f2 | cut -d' ' -f2 | tr -d '"' | head -n1) && \
     ## php runtime environments
     # { \
     # echo "memory_limit = ${PHP_MEMORY_LIMIT}"; \

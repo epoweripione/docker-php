@@ -51,7 +51,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         soap \
         sockets \
         ssh2 \
-        swoole \
         sysvmsg \
         sysvsem \
         sysvshm \
@@ -69,6 +68,12 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
     install-php-extensions @composer && \
     : && \
     rm -rf /tmp/* /var/cache/apk/*
+
+## [swoole](https://github.com/swoole/library/blob/master/Dockerfile)
+# RUN apt-get update && \
+#     apt-get install -y sqlite3 libsqlite3-dev libpq-dev --no-install-recommends && \
+#     install-php-extensions swoole && \
+#     rm -rf /tmp/* /var/cache/apk/*
 
 RUN set -ex && \
     ## PDFlib

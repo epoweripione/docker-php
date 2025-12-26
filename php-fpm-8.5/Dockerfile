@@ -34,7 +34,6 @@ RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
         json_post \
         ldap \
         mailparse \
-        memcache \
         memcached \
         mongodb \
         msgpack \

@@ -59,7 +59,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v4
         with:
-          registry: registry.cn-guangzhou.aliyuncs.com/siyuwuxin/php-fpm-8.1
+          registry: registry.cn-guangzhou.aliyuncs.com
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
